@@ -26,8 +26,9 @@ function onSearchResponse(response) {
     var responseString = JSON.stringify(response, '', 2);
     document.getElementById('response').innerHTML = responseString;
     const responseOutput = document.getElementById('response');
-    var listItems = responseString.result.items;
-    console.log(listItems);
+    console.log(responseString.items.title);
+    var listItems = responseString.items.title;
+
     var output = '';
     for (let i = 0; i < listItems.length; ++i) {
       const vidTitle = listItems.snippet.title;
