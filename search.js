@@ -24,7 +24,7 @@ function search() {
 // Triggered by this line: request.execute(onSearchResponse);
 function onSearchResponse(response) {
     var responseString = JSON.stringify(response, '', 2);
-    const listItems = reponse.result.items'
+    const listItems = response.result.items;
     console.log(listItems);
     document.getElementById('response').innerHTML = responseString;
     const responseOutput = document.getElementById('response');
