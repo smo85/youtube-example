@@ -24,10 +24,12 @@ function search() {
 // Triggered by this line: request.execute(onSearchResponse);
 function onSearchResponse(response) {
     var responseString = JSON.stringify(response, '', 2);
+    const listItems = reponse.result.items'
+    console.log(listItems);
     document.getElementById('response').innerHTML = responseString;
     const responseOutput = document.getElementById('response');
-    console.log(responseString.items.title);
-    var listItems = responseString.items.title;
+    // console.log(responseString.items.title);
+    // var listItems = responseString.items.title;
 
     var output = '';
     for (let i = 0; i < listItems.length; ++i) {
