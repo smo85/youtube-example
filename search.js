@@ -25,7 +25,7 @@ function search() {
 function onSearchResponse(response) {
     var responseString = JSON.stringify(response, '', 2);
     const listItems = response.result.items;
-    console.log(listItems);
+    console.log(listItems[0].snippet.title);
     document.getElementById('response').innerHTML = responseString;
     const responseOutput = document.getElementById('response');
     // console.log(responseString.items.title);
@@ -33,8 +33,10 @@ function onSearchResponse(response) {
 
     var output = '';
     for (let i = 0; i < listItems.length; ++i) {
-      const vidTitle = listItems.snippet.title;
-      output += '<li>' + vidTitle + '</li>';
+      const vidTitle = listItems[i].snippet.title;
+      const embedVid = listItems[i].id.videoId;
+      console.log('thumbImg');
+      output += '<li><iframe id=ytplayer type=text/html width=640 height=360 src=https://www.youtube.com/embed/' + embedVid + '></iframe>' + vidTitle + '</li>';
     }
     output = '<ul>' + output + '</ul>';
     responseOutput.innerHTML = output;
