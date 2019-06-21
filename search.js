@@ -29,7 +29,7 @@ function onSearchResponse(response) {
     var listItems = response.result.items;
     var output = '';
     for (let i = 0; i < listItems.length; ++i) {
-      const vidTitle = item.snippet.title;
+      const vidTitle = listItems.snippet.title;
       output += '<li>' + vidTitle + '</li>';
     }
     output = '<ul>' + output + '</ul>';
